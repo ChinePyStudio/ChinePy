@@ -51,7 +51,7 @@ while True:
                 com[0] = float(com[0])
             elif com[0] == "表达型":
                 com[0] = bool(com[0])
-            bin.numer(com[])
+            bin.numer(com[0])
         if "打印" in commond:
             thing = commond.split(' ')
             bin.print(thing[1])
