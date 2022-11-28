@@ -19,7 +19,7 @@ class Compile():
     def numer(self, name, value):
         num_all[name] = value
         print("成功")
-        return 1
+        return True
     #打印功能
     def print(self,things,numer = False):
         print(things)
@@ -86,7 +86,7 @@ while True:
                 t2 = num_all[csa]
                 bin.print(t2)
             else:
-                bin.print(thing[1])
+                bin.print(eval(thing[1]))
             continue
         if "说" in commond:
             meed = commond.split(' ')
