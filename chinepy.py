@@ -1,3 +1,4 @@
+import re
 '''
 
 ChinePy版本：1.2.8
@@ -19,7 +20,7 @@ class Compile():
     def numer(self, name, value):
         num_all[name] = value
         print("成功")
-        return 1
+        return True
     #打印功能
     def print(self,things,numer = False):
         print(things)
@@ -81,12 +82,18 @@ while True:
             continue
         if "打印" in commond:
             thing = commond.split(' ')
+            
             if thing[1] == "变量":
                 csa = thing[2]
                 t2 = num_all[csa]
                 bin.print(t2)
             else:
-                bin.print(thing[1])
+                reg =r"[\+\-\\*\\/]+" #正则表达式:匹配四则运算符+-*/
+                temp_if = re.search(reg,thing[1])
+                if re.search(reg,thing[1]):
+                    bin.print(eval(thing[1]))
+                else:
+                    bin.print(thing[1])
             continue
         if "说" in commond:
             meed = commond.split(' ')
@@ -110,5 +117,5 @@ while True:
         else:
             bin.fail('078x13')
     except: 
-        bin.fail('078x13')
+        bin.fail('889x032')
         break
